@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-6 col-md-12">
+    <div class="thumbnail">
+      <img ng-src="{{data.img_url}}" alt="{{data.name}}">
+      <div class="caption">
+        <uib-progressbar max="max" value="30"><span style="color:white; white-space:nowrap;">13 / 555</span></uib-progressbar>
+        <h2 class="text-center"><a href="/datas/{{data.id}}">{{data.name}}</a></h2>
+        <p class="text-center">{{data.description}}</p>
+        <p class="text-center">
+          <a href="#" class="btn btn-default" role="button">加入购物车</a>
+          <a href="#" class="btn btn-primary" ng-click="open('', item)">立即购买</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

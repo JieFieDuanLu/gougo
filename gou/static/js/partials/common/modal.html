@@ -1,0 +1,19 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">{{item.name}}</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+      <div class="input-group">
+        <div class="input-group-addon">￥</div>
+        <input type="text" class="form-control" ng-model="price">
+        <div class="input-group-addon">.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">购买</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">取消</button>
+  </div>
+</div>

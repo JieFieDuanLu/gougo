@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+
+    <title>一云购</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/loading-bar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-theme.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="{% static 'js/libs/bootstrap/ie8-responsive-file-warning.js' %}"></script><![endif]-->
+    <script src="{% static 'js/libs/bootstrap/ie-emulation-modes-warning.js' %}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{% static 'js/libs/bootstrap/html5shiv.min.js' %}"></script>
+      <script src="{% static 'js/libs/bootstrap/respond.min.js' %}"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app="app">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-include="'/static/js/partials/common/nav.html'" ng-controller="NavCtrl">
+    </nav>
+
+    <div class="container" ng-view></div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/libs/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/libs/bootstrap/ie10-viewport-bug-workaround.js' %}"></script>
+
+    <script src="{% static 'js/libs/angular/angular.js' %}"></script>
+    <script src="{% static 'js/libs/angular/angular-cookies.js' %}"></script>
+    <script src="{% static 'js/libs/angular/angular-route.js' %}"></script>
+    <script src="{% static 'js/libs/angular/angular-animate.js' %}"></script>
+    <script src="{% static 'js/libs/angular/angular-aria.js' %}"></script>
+    <script src="{% static 'js/libs/angular/angular-messages.js' %}"></script>
+
+    <script src="{% static 'js/libs/angular-loading-bar/loading-bar.js' %}"></script>
+    <script src="{% static 'js/libs/angular-bootstrap/ui-bootstrap.min.js' %}"></script>
+    
+    <!-- Your application bootstrap  -->
+    <script src="{% static 'js/apps/common/controllers.js' %}"></script>
+    <script src="{% static 'js/apps/home/controllers.js' %}"></script>
+    <script src="{% static 'js/apps/item/controllers.js' %}"></script>
+    <script src="{% static 'js/apps/cart/controllers.js' %}"></script>
+    <script src="{% static 'js/apps/app.js' %}"></script>
+  </body>
+</html>
