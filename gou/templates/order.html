@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fixed-bottom" id="menu">
+    <ul class="nav navbar-nav">
+      <li><a class="nav-home" href="/"><span></span>首页</a></li>
+      <li><a class="nav-product" href="/items/"><span></span>全部旅途</a></li>
+      <li class="active"><a class="nav-cart" href="/cart/"><span></span>购物车</a></li>
+      <li><a class="nav-member" href="/me/"><span></span>个人中心</a></li>
+    </ul>
+  </nav>
+<!--导航 end-->
+<nav class="navbar navbar-inverse" id="menuTop">购物车</nav>
+<!--顶部栏目 end-->
+<div class="cartcenter">
+  <div class="tab-pane" id="producta">
+    <ul>
+      {% for order in orders%}
+        <li>
+          <div class="poductImg"><img src="img/index-01.jpg"></div>
+          <div class="productCon">
+            <p>(第1200订)云南双人5日双飞 游丽江，玉龙雪山.. </p>
+            <h1>剩余3025人次</h1>
+            <span class="cartCenter"><em>参与人次</em>
+            <input type="text" value="111">
+            <i>1111元</i><a href="#">订制</a></span>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="cartCount">
+  <span>共<em>2</em>种订制，合计<em>2222.00</em>元</span>
+  <a href="#">结算</a>
+</nav>
+{% endblock %}

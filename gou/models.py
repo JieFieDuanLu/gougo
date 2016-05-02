@@ -74,3 +74,21 @@ class Cart(models.Model):
 
     def __str__(self):
         return '%s: %s' % (self.user.username, self.item.name)
+
+
+@python_2_unicode_compatible
+class Profile(models.Model):
+    user = models.OneToOneField(
+        User,
+        related_name='profile',
+        verbose_name=_('profile')
+    )
+    nickname = models.CharField(_('nickname'), max_length=100)
+    gender = models.IntegerField(_('gender'))
+    phone = models.CharField(_('phone'), max_length=20)
+    qq = models.CharField(_('qq'), max_length=20)
+    weixin = models.CharField(_('weixin'), max_length=50)
+    address = models.CharField(_('address'), max_length=200)
+
+    def __str__(self):
+        return self.nickname

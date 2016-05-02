@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <nav class="navbar navbar-inverse navbar-fixed-bottom" id="menu">
+    <ul class="nav navbar-nav">
+      <li class="active"><a class="nav-home" href="/"><span></span>首页</a></li>
+      <li><a class="nav-product" href="/items/"><span></span>全部旅途</a></li>
+      <li><a class="nav-cart" href="/cart/"><span></span>购物车</a></li>
+      <li><a class="nav-member" href="/me/"><span></span>个人中心</a></li>
+    </ul>
+  </nav>
+  <header class="header">
+    <img src="{% static 'img/logo.png' %}">
+  </header>
+  <div class="banner" id="banner">
+    <div class="bd">
+      <ul>
+        <li>
+          <a class="pic" href="#"><img src="{% static 'img/banner.png' %}"></a>
+        </li>
+        <li>
+          <a class="pic" href="#"><img src="{% static 'img/banner.png' %}"></a>
+        </li>
+        <li>
+          <a class="pic" href="#"><img src="{% static 'img/banner.png' %}"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="hd">
+      <ul>
+      </ul>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="popularArea">
+    <h1><span></span>最聚人气</h1>
+    <ul>
+      {% for item in populated %}
+        <li>
+          <div class="liCon">
+            <p>{{ item.name }}</p>
+            <h2>5700/6200</h2>
+            <span><em style="width:90%"></em></span></div>
+          <div class="liImg">
+            <img src="{% static 'img/index-02.jpg' %}" width="135" height="102">
+          </div>
+          <div class="clearfix"></div>
+        </li>
+      {% endfor %}
+      <div class="clearfix"></div>
+    </ul>
+  </div>
+  <div class="popularAbroad">
+    <dl>
+      <dt><img src="{% static 'img/index-05.jpg' %}" width="350" height="221"></dt>
+      <dd>
+        <span>一元澳洲行 <em>全程代订</em></span>
+        <img src="{% static 'img/index-06.jpg' %}" width="195" height="105">
+        <div class="clearfix"></div>
+      </dd>
+      <dd>
+        <span>一元澳洲行 <em>全程代订</em></span>
+        <img src="{% static 'img/index-07.jpg' %}" width="195" height="106">
+        <div class="clearfix"></div>
+      </dd>
+      <dd>
+        <span>一元澳洲行 <em>全程代订</em></span>
+        <img src="{% static 'img/index-08.jpg' %}" width="195" height="106">
+        <div class="clearfix"></div>
+      </dd>
+      <dd>
+        <span>一元澳洲行 <em>全程代订</em> </span>
+        <img src="{% static 'img/index-09.jpg' %}" width="195" height="106">
+        <div class="clearfix"></div>
+      </dd>
+      <div class="clearfix"></div>
+    </dl>
+  </div>
+  <div class="hothare">
+    <h1>订友分享</h1>
+    <dl>
+      <dt> <img src="img/index-010.jpg" width="355" height="361"> </dt>
+      <dd> <img src="img/index-011.jpg" width="350" height="178"> </dd>
+      <dd> <img src="img/index-012.jpg" width="350" height="178"> </dd>
+      <div class="clearfix"></div>
+    </dl>
+  </div>
+{% endblock %}

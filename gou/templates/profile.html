@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="menu">
+    <ul class="nav navbar-nav">
+      <li><a class="nav-home" href="/"><span></span>首页</a></li>
+      <li><a class="nav-product" href="/items/"><span></span>全部旅途</a></li>
+      <li><a class="nav-cart" href="/cart/"><span></span>购物车</a></li>
+      <li class="active"><a class="nav-member" href="/me/"><span></span>个人中心</a></li>
+    </ul>
+  </nav>
+<!--导航 end-->
+<nav class="navbar navbar-inverse" id="menuTop">个人中心</nav>
+<!--顶部栏目 end-->
+<div class="orderMan">
+  <div class="orderInfora">
+    <p><img src="{% static 'img/orderTou.jpg' %}"></p>
+    <span>
+      {{ profile.nickname }}<em>({{ profile.phone }})</em>
+      <i>个性签名：想去哪玩去哪玩</i>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+  <div class="orderInforb">
+    <ul>
+      <li><span>昵称：</span>
+        <input type="text" class="form-control txta" value="{{ profile.nickname }}">
+        <div class="clearfix"></div>
+      </li>
+      <li><span>性别：</span>
+        <select class="form-control sele">
+          <option>男</option>
+          <option selected="selected">女</option>
+        </select>
+        <div class="clearfix"></div>
+      </li>
+      <li><span>电话：<em>（备用联系不做公开）</em></span>
+        <input type="text" class="form-control txta" value="{{ profile.phone }}">
+        <div class="clearfix"></div>
+      </li>
+      <li><span>QQ：<em>（备用联系不做公开）</em></span>
+        <input type="text" class="form-control txta" value="{{ profile.qq }}">
+        <div class="clearfix"></div>
+      </li>
+      <li><span>地址：<em>（备用联系不做公开）</em></span>
+        <input type="text" class="form-control txtb" value="{{ profile.address }}">
+        <div class="clearfix"></div>
+      </li>
+    </ul>
+    <div class="orderBtn">
+      <button type="submit" class="btn btn-default">登录</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

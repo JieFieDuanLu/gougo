@@ -17,17 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 import settings
 from django.conf.urls.static import static
-from gou.views import Home
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include('api.urls', namespace='api')),
     url(r'^filer/', include('filer.server.urls')),
     url(r'^', include('gou.urls', namespace='gou')),
-    url(r'^api-auth/', include(
-        'rest_framework.urls', namespace='rest_framework'))
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += [
-    url(r'^[\s\S]*', Home.as_view(), name='redirect'),
-]

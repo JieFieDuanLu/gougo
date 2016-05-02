@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="menu">
+  <ul class="nav navbar-nav">
+    <li><a class="nav-home" href="/"><span></span>首页</a></li>
+    <li class="active"><a class="nav-product" href="/items/"><span></span>全部旅途</a></li>
+    <li><a class="nav-cart" href="/cart/"><span></span>购物车</a></li>
+    <li><a class="nav-member" href="/me/"><span></span>个人中心</a></li>
+  </ul>
+</nav>
+<nav class="navbar navbar-inverse" id="menuTop">全部旅途</nav>
+<div class="product">
+  <ul class="nav nav-tabs productNav">
+    <li class="active"><a href="#producta" data-toggle="tab">你想去哪</a></li>
+    <li><a href="#productb" data-toggle="tab">即将揭晓</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="producta">
+      <ul>
+        {% for item in items %}
+          <li>
+            <div class="poductImg"><img src="img/index-01.jpg"></div>
+            <div class="productCon">
+              <p>(第1200订)云南双人5日双飞 游丽江，玉龙雪山.. </p>
+              <h1>价值：520</h1>
+              <h2>3200/5200</h2>
+              <span class="productSpan"><em style="width:92%"></em></span><a class="productA" href="#">订制</a> </div>
+            <div class="clearfix"></div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="tab-pane" id="productb">
+      <ul>
+        {% for item in finishing %}
+          <li>
+            <div class="poductImg"><img src="img/index-01.jpg"></div>
+            <div class="productCon">
+              <p>(第1200订)云南双人5日双飞 游丽江，玉龙雪山.. </p>
+              <h1>价值：520</h1>
+              <h2>3200/5200</h2>
+              <span class="productSpan"><em style="width:92%"></em></span><a class="productA" href="#">订制</a> </div>
+            <div class="clearfix"></div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

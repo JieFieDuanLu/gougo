@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'gou',
     'easy_thumbnails',
     'filer',
     'mptt',
+    'registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,3 +134,4 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+ACCOUNT_ACTIVATION_DAYS = 7
