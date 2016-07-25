@@ -78,13 +78,18 @@ class Cart(models.Model):
 
 @python_2_unicode_compatible
 class Profile(models.Model):
+
+    GENDER = (
+        (1, _('man')),
+        (0, _('woman')),
+    )
     user = models.OneToOneField(
         User,
         related_name='profile',
         verbose_name=_('profile')
     )
     nickname = models.CharField(_('nickname'), max_length=100)
-    gender = models.IntegerField(_('gender'))
+    gender = models.IntegerField(_('gender'), choices=GENDER)
     phone = models.CharField(_('phone'), max_length=20)
     qq = models.CharField(_('qq'), max_length=20)
     weixin = models.CharField(_('weixin'), max_length=50)

@@ -5,6 +5,7 @@ body {
     margin: 0px;
     padding: 0px 0px 86px 0px;
     font-family: "微软雅黑", "microsoft yahei", Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 * {
     margin: 0px;
@@ -55,6 +56,7 @@ ul, ol, dl, dt, dd {
 #menu ul li a {
     display: inline-block;
     height: 106px;
+    line-height: 12px;
     margin: 0px auto;
     padding: 0px;
     font-size: 22px;
@@ -116,14 +118,23 @@ ul, ol, dl, dt, dd {
 /*==header==*/
 .header {
     background: #4d4d4d;
-    ;
     height: 112px;
     line-height: 112px;
-    text-align: center
+    text-align: center;
+    position: relative;
 }
 .header img {
     width: 150px;
     height: 52px;
+}
+.header a {
+    display: inline-block;
+    background: url("../img/login_btn.png") no-repeat;
+    width: 89px;
+    height: 36px;
+    position: absolute;
+    right: 18px;
+    bottom: 0px;
 }
 /*==banner==*/
 .banner {
@@ -605,15 +616,235 @@ ul, ol, dl, dt, dd {
 .orderInforb .orderBtn button:hover, .orderInforb .orderBtn button:active, .orderInforb .orderBtn button:focus {
     background: #e00303;
 }
-@media screen and (min-width:320px) {
+.regedit {
+    padding: 0px;
 }
-@media screen and (min-width:360px) {;
+.loginRegedit {
+    background: url("../img/login_bg.jpg") bottom center no-repeat;
+    background-size: cover;
+    text-align: center;
+} 
+.loginRegedit dl {
+    display: inline-block;
+    width: 462px;
+    margin: 0px auto;
+    padding: 180px 0px 0px;
 }
-@media screen and (min-width:375px) {
+.loginRegedit dl dt {
+    margin-bottom: 38px;
 }
-@media screen and (min-width:414px) {
+.loginRegedit dl dd {
+    background: url("../img/regedit_input.png") no-repeat;
+    display: block;
+    width: 100%;
+    height: 78px;
+    margin-bottom: 22px;
 }
-@media screen and (min-width:480px) {
+
+.loginRegedit dl dd span {
+    float: left;
+    display: inline-block;
+    width: 86px;
+    padding-left: 22px;
+    line-height: 76px;
+    text-align: center;
 }
-@media screen and (min-width:640px) {
+.loginRegedit dl dd input::-webkit-input-placeholder {
+    color: #76828d;
+} 
+.loginRegedit dl dd input {
+    float: left;
+    display: inline-block;
+    width: 332px;
+    height: 46px;
+    margin-top: 16px;
+    line-height: 46px;
+    background: #6a7278;
+    border: #a0a0a0 solid 1px;
+    text-indent: 12px;
+    font-size: 20px;
+    color: #fff;
+    text-align: left;
+}
+.loginRegedit dl dd:last-child {
+    background: none;
+    background-color: #7b8553;
+    line-height: 78px;
+    font-size: 34px;
+    border-radius: 6px;
+    margin-bottom: 108px;
+    letter-spacing: 4px;
+}
+.loginRegedit dl dd:last-child a,.loginRegedit dl dd:last-child a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.logined dl {
+    padding-top:  40px;
+}
+.logined dl dd:last-child {
+    margin-bottom: 20px;
+}
+.loginInfor {
+    width: 462px;
+    margin: 0px auto 20px;
+    text-align: left;
+}
+.loginInfor span {
+    float: left;
+    display: inline-block;
+    margin-right: 120px;
+}
+.loginInfor span:nth-child(1) {
+    background: url("../img/QQ.png")  no-repeat;
+    width: 63px;
+    height: 69px;
+}
+.loginInfor span:nth-child(2) {
+    background: url("../img/weixin.png")  no-repeat;
+    width: 88px;
+    height: 69px;
+    margin-right: 110px;
+}
+.loginInfor span:nth-child(3) { 
+    float: right;
+    margin: 18px 0px 0px 0px;
+    border-bottom: #fff solid 1px;
+    
+}
+.loginInfor span:nth-child(3)  a ,.loginInfor span:nth-child(3)  a:focus,.loginInfor span:nth-child(3)  a:hover { 
+    font-size: 34px;
+    color: #fff;
+}       
+
+@media screen and (max-width:376px) {
+/*==menu==*/
+#menu {
+    height: 54px;
+}
+#menu ul {
+    margin: 3px 0px 0px 0px;
+}
+#menu ul li {  
+    height: 54px;
+}
+#menu ul li a {
+    height: 54px;
+    font-size: 12px;
+}
+#menu ul li a span {
+    height: 32px;
+}
+
+#menu ul li a.nav-home span,
+#menu ul li.active a.nav-home span,
+ #menu ul li a.nav-home:hover span, 
+ #menu ul li a.nav-home:focus span {
+    background-size: 24px 22px;
+ }
+
+#menu ul li a.nav-product span,
+#menu ul li.active a.nav-product span, 
+#menu ul li a.nav-product:hover span, 
+#menu ul li a.nav-product:focus span {
+    background-size: 21px 21px;
+}
+
+#menu ul li a.nav-cart span,
+#menu ul li.active a.nav-cart span, 
+#menu ul li a.nav-cart:hover span, 
+#menu ul li a.nav-cart:focus span {
+    background-size: 35px 22px;
+}
+
+#menu ul li a.nav-member span,
+#menu ul li.active a.nav-member span, 
+#menu ul li a.nav-member:hover span, 
+#menu ul li a.nav-member:focus span {
+    background-size: 21px 22px;
+}
+
+.loginRegedit dl {
+    width: 232px;
+    padding: 50px 0px 0px;
+}
+
+.loginRegedit dl dt img {
+    width: 116px;
+    height: 48px;
+}
+.loginRegedit dl dd {
+    background-size: 232px 40px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 14px;
+}
+.loginRegedit dl dd span img.use {
+    width: 18px;
+    height: 18px;
+}
+.loginRegedit dl dd span img.pwd {
+    width: 14px;
+    height: 18px;
+}
+.loginRegedit dl dd span img.email {
+    width: 19px;
+    height: 12px;
+}
+.loginRegedit dl dd span img.mobile {
+    width: 14px;
+    height: 18px;
+}
+.loginRegedit dl dd span {
+    width: 44px;
+    padding-left: 10px;
+    line-height: 40px;
+}
+.loginRegedit dl dd input {
+    width: 166px;
+    height: 28px;
+    margin-top: 6px;
+    line-height: 28px;
+    text-indent: 6px;
+    font-size: 14px;
+
+}
+.loginRegedit dl dd:last-child {
+    line-height: 40px;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+.logined {
+    padding: 60px 0px 0px;
+}
+.logined dl dt {
+    margin-bottom: 70px;
+}
+.logined dl dd:last-child {
+    margin-bottom: 20px;
+}
+.loginInfor {
+    width: 232px;
+    margin: 0px auto;
+}
+.loginInfor span {
+    margin-right: 60px;
+}
+.loginInfor span:nth-child(1) {
+    background-size: 20px 22px;
+    width: 30px;
+    height: 22px;
+}
+.loginInfor span:nth-child(2) {
+    background-size: 28px 22px;
+    width: 44px;
+    height: 22px;
+    margin-right: 55px;
+}
+.loginInfor span:nth-child(3) { 
+    margin: 0px 0px 0px 0px;   
+}
+.loginInfor span:nth-child(3)  a ,.loginInfor span:nth-child(3)  a:focus,.loginInfor span:nth-child(3)  a:hover { 
+    font-size: 14px;
+}       
 }

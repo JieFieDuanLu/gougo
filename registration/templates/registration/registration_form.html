@@ -1,13 +1,40 @@
 {% extends "registration/registration_base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
-{% block title %}{% trans "Register for an account" %}{% endblock %}
+{% block title %}{% trans "Register" %}{% endblock %}
 
 {% block content %}
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{% trans 'Submit' %}" />
+<form method="post" action="">{% csrf_token %}
+
+    <div class="loginRegedit">
+        <dl>
+            <dt>
+                <img src="{% static 'img/unlogo.png' %}"></dt>
+            <dd>
+                <span>
+                    <img src="{% static 'img/use.png' %}" class="use"></span>
+                <input type="text" placeholder="昵称"></dd>
+            <dd>
+                <span>
+                    <img src="{% static 'img/pwd.png' %}" class="pwd"></span>
+                <input type="text" placeholder="密码"></dd>
+            <dd>
+                <span>
+                    <img src="{% static 'img/pwd.png' %}" class="pwd"></span>
+                <input type="text" placeholder="确认密码"></dd>
+            <dd>
+                <span>
+                    <img src="{% static 'img/email.png' %}" class="email"></span>
+                <input type="text" placeholder="Email"></dd>
+            <dd>
+                <span>
+                    <img src="{% static 'img/mobile.png' %}" class="mobile"></span>
+                <input type="text" placeholder="手机号码"></dd>
+            <dd>
+                <button class="btn-block">{% trans 'Submit' %}</button>
+            </dd>
+        </dl>
+    </div>
 </form>
 {% endblock %}
 
