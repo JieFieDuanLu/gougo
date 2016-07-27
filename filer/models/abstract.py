@@ -4,6 +4,8 @@ from __future__ import absolute_import
 import logging
 import os
 
+from distutils.version import LooseVersion
+from django import get_version
 from django.db import models
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
@@ -15,6 +17,8 @@ from ..utils.pil_exif import get_exif_for_file
 from .filemodels import File
 
 logger = logging.getLogger(__name__)
+
+DJANGO_GTE_17 = LooseVersion(get_version()) >= LooseVersion('1.7.0')
 
 
 class BaseImage(File):
@@ -38,6 +42,9 @@ class BaseImage(File):
 
     subject_location = models.CharField(_('subject location'), max_length=64, blank=True,
                                         default='')
+    if DJANGO_GTE_17:
+        file_ptr = models.OneToOneField(to='filer.File', related_name='%(app_label)s_%(class)s_file',
+                                        on_delete=models.CASCADE)
 
     @classmethod
     def matches_file_type(cls, iname, ifile, request):
