@@ -52,6 +52,28 @@ class Order(models.Model):
 
 
 @python_2_unicode_compatible
+class ItemInt(models.Model):
+    item = models.ForeignKey(
+        Item,
+        related_name='itemInts',
+        verbose_name=_('item')
+    )
+    user = models.ForeignKey(
+        User,
+        related_name='itemInts',
+        verbose_name=_('user')
+    )
+
+    class Meta:
+        verbose_name = _('itemInts')
+        verbose_name_plural = _('itemInts')
+        db_table = 'item_int'
+
+    def __str__(self):
+        return '%s: %s' % (self.user.username, self.item.name)
+
+
+@python_2_unicode_compatible
 class Cart(models.Model):
     user = models.ForeignKey(
         User,

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load staticfiles thumbnail current_count %}
 
+{% block title %}一元订制-全部旅途{% endblock %}
 {% block content %}
 <nav class="navbar navbar-inverse navbar-fixed-bottom" id="menu">
   <ul class="nav navbar-nav">
@@ -21,12 +22,17 @@
       <ul>
         {% for item in items %}
           <li>
-            <div class="poductImg"><img src="img/index-01.jpg"></div>
+            <div class="poductImg">
+              <img src="{% thumbnail item.image 200x200 crop %}">
+            </div>
             <div class="productCon">
-              <p>(第1200订)云南双人5日双飞 游丽江，玉龙雪山.. </p>
-              <h1>价值：520</h1>
-              <h2>3200/5200</h2>
-              <span class="productSpan"><em style="width:92%"></em></span><a class="productA" href="#">订制</a> </div>
+              <p>{{ item.description }}</p>
+              <h1>价值：{{ item.price }}</h1>
+              <h2>{{ item.id|count }}/{{ item.price }}</h2>
+              <span class="productSpan">
+                <em style="width:{{ item.id|count }} * 100/{{ item.price }}%"></em>
+                </span><a class="productA" href="#">订制</a>
+              </div>
             <div class="clearfix"></div>
           </li>
         {% endfor %}
@@ -36,12 +42,17 @@
       <ul>
         {% for item in finishing %}
           <li>
-            <div class="poductImg"><img src="img/index-01.jpg"></div>
+            <div class="poductImg">
+              <img src="{% thumbnail item.image 200x200 crop %}">
+            </div>
             <div class="productCon">
-              <p>(第1200订)云南双人5日双飞 游丽江，玉龙雪山.. </p>
-              <h1>价值：520</h1>
-              <h2>3200/5200</h2>
-              <span class="productSpan"><em style="width:92%"></em></span><a class="productA" href="#">订制</a> </div>
+              <p>{{ item.description }}</p>
+              <h1>价值：{{ item.price }}</h1>
+              <h2>{{ item.id|count }}/{{ item.price }}</h2>
+              <span class="productSpan">
+                <em style="width:{{ item.id|count }} * 100/{{ item.price }}%"></em>
+              </span>
+              <a class="productA" href="#">订制</a> </div>
             <div class="clearfix"></div>
           </li>
         {% endfor %}
